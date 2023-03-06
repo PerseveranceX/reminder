@@ -41,7 +41,7 @@ function request(worker) {
     }
 }
 
-navigator.onmessage = (e) => {
+navigator.serviceWorker.onmessage = (e) => {
     console.log(e);
 }
 
