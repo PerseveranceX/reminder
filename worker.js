@@ -17,8 +17,8 @@ function remind() {
 self.addEventListener("message", async (event) => {
     if (event.data == 'start') {
         remind();
-        const windowClients = await clients.matchAll({ type: "window" });
-        windowClients[0].postMessage('Send this message to window.navigator.serviceWorker.controller');
+        const client = await clients.get(event.clientId);
+        client.postMessage("testing this");
         //registration.active.postMessage("test");
     }
 });
