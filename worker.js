@@ -11,7 +11,7 @@ function remind() {
             'actions': [{ 'action': 'yes', 'title': 'Sure' }, { 'action': 'No', 'title': 'No, I\'m a lazy idiot!' }]
         });
     iconNum++;
-    setTimeout(remind, 32000);
+    setTimeout(remind, 1200000);
 }
 
 self.addEventListener("message", async (event) => {
