@@ -17,8 +17,7 @@ function remind() {
 self.addEventListener("message", async (event) => {
     if (event.data == 'start') {
         remind();
-        const client = await clients.get(event.clientId);
-        client.postMessage("testing this");
+        console.log(event);
         //registration.active.postMessage("test");
     }
 });
