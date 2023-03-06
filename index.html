@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reminder</title>
+    <style>
+        body {
+            background-color: #202124;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    if (Notification.permission != "granted") {
+      Notification.requestPermission().then((permission) => {
+      if (permission == "granted") {
+        remind();
+      }else {
+        location.reload();
+      }
+    });
+}
+function remind(){
+    const notification = new Notification("Look at something +6 meters away, for +20 seconds.");
+    setTimeout(remind, 1200000);
+}
+
+    </script>
+</body>
+</html>
