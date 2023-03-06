@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Reminder</title>
-    <style>
-        body {
-            background-color: #202124;
-            height: 100vh;
-        }
-    </style>
-</head>
-<body>
-    <script>
-    if (Notification.permission != "granted") {
-      Notification.requestPermission().then((permission) => {
-      if (permission == "granted") {
-        remind();
-      }else {
-        location.reload();
-      }
-    });
-}
-function remind(){
-    const notification = new Notification("Look at something +6 meters away, for +20 seconds.",{'icon':'eye-icon.png'});
-    setTimeout(remind, 1200000);
-}
 
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <title>Reminder</title>
+  <style>
+    body {
+      background-color: #202124;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #enable-btn {
+      padding: 5px;
+      background-color: #00a509;
+      display: inline-block;
+      position: relative;
+      left: 40vw;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+
+    #notify {
+      padding: 5px;
+      background-color: orange;
+      display: inline-block;
+      position: absolute;
+      top: 50px;
+      font-weight: bold;
+      font-size: 20px;
+      left: 20px;
+      cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="js.js"></script>
 </body>
+
 </html>
