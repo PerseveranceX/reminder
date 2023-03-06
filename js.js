@@ -41,7 +41,7 @@ function request(worker) {
     }
 }
 
-onmessage = (e) => {
+navigator.onmessage = (e) => {
     console.log(e);
 }
 
