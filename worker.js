@@ -17,11 +17,7 @@ function remind() {
 self.addEventListener("message", async (event) => {
     if (event.data == 'start') {
         remind();
-        (async () => {
-            const allClients = await clients.matchAll();
-            let client = allClients[0];
-            client.postMessage("New chat messages!");
-        })();
+        event.source.postMessage("New chat messages!");
         //registration.active.postMessage("test");
     }
 });
