@@ -20,7 +20,7 @@ self.addEventListener("message", async (event) => {
         (async () => {
             const allClients = await clients.matchAll();
             let client = allClients[0];
-            chatClient.postMessage("New chat messages!");
+            client.postMessage("New chat messages!");
         })();
         //registration.active.postMessage("test");
     }
