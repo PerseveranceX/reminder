@@ -14,13 +14,14 @@ function remind() {
     setTimeout(remind, 32000);
 }
 
-onmessage = (e) => {
-    if (e.data == 'start') {
+self.addEventListener("message", async (event) => {
+    if (event.data == 'start') {
         remind();
-        console.log(navigator.serviceWorker.controller)
+        const windowClients = await clients.matchAll({ type: "window" });
+        windowClients[0].postMessage('Send this message to window.navigator.serviceWorker.controller');
         //registration.active.postMessage("test");
     }
-}
+});
 
 self.addEventListener("notificationclick", (event) => {
     console.log(event.action);
